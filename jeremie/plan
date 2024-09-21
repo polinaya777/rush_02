@@ -1,0 +1,19 @@
+=====FUNCTIONS====
+Needed functions : atol, split, join, parse_number, mk_dict, new_entry, add_to_dict
+From stdlib : malloc, free
+From unistd : write
+From stdio : open, read, close
+
+atol ok
+join ok
+
+====TYPEDEF====
+typedef struct s_dict_entry
+{
+	char	*key; (or int key ?)
+	char	*value;
+}				t_dict_entry;
+
+====TO DO====
+1.	Parse number : atol
+					write in letters using dict : search in sorted dict ? hash function ?
