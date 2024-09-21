@@ -1,13 +1,9 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include "ft_parse_dict.h"
-#include "ft_atoi.h"
 
-int	main(int argc, char **argv[])
+int	ft_check_entry(int argc, char **argv, char **dict, char **number)
 {
-	int	i;
-	char	*dict;
-	char	*number;
+	char	*temp;
 
 	if (argc < 2 || argc > 3)
 	{
@@ -16,31 +12,41 @@ int	main(int argc, char **argv[])
 	}
     if (argc == 3)
 	{
-		dict = argv[1];
-		number = argv[2];
+		*dict = argv[1];
+		*number = argv[2];
 	}
 	else
 	{
-		dict = "numbers.dict";
-		number == argv[1];
+		*dict = "numbers.dict";
+		*number = argv[1];
 	}
-	i = 0;
-	while (number[i])
+	temp = *number;
+	while (*temp)
 	{
-		if (number[i] < '0' || number[i] > '9')
+		if (*temp < '0' || *temp > '9')
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		temp++;
 	}
-	if (!dict)
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	char	*dict;
+	char	*number;
+
+	if (ft_check_entry(argc, argv, &dict, &number))
 	{
-		write(2, "Dict Error\n", 11);
-		return (0);
+		if (!dict)
+		{
+			write(2, "Dict Error\n", 11);
+			return (0);
+		}
+		//Convert number and parse dict...
 	}
-	
-	//Convert number and parse dict...
-	
 	return (0);
 }
 
