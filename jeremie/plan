@@ -2,7 +2,7 @@
 Needed functions : putstr, atol, split, parse_number, mk_dict, new_entry, add_to_dict
 From stdlib : malloc, free
 From unistd : write
-From stdio : open, read, close
+From stdio : open, read, close -- O_RDONLY, O_RDWR, O_APPEND
 
 atol ok
 split ok?
