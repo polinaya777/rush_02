@@ -13,7 +13,7 @@
 
 NAME = rush-02
 
-SRC = src/main.c src/ft_util.c src/ft_rush02.c
+SRC = src/*.c
 
 OBJS = ${SRC:.c=.o}
 

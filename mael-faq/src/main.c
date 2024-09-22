@@ -82,7 +82,7 @@ int	main(int ac, char **av)
 			write(1, "Error\n", 6);
 			return (0);
 		}
-		list = init_list("dict.txt");
+		list = init_list("numbers.dict");
 		ft_print(ft_atoi(av[1]), list, &first);
 		ft_putchar('\n');
 	}

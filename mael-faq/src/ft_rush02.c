@@ -61,11 +61,11 @@ t_list	*init_list(char *file_name)
 	char *tmp;
 
 	file = open(file_name, O_RDONLY);
-	list = (t_list *)malloc(sizeof(t_list) * 33);
+	list = (t_list *)malloc(sizeof(t_list) * 42);
 	if (file == -1 || list == NULL)
 		return (NULL);
 	i = 0;
-	while (i < 32)
+	while (i < 42)
 	{
 		list[i].nbr = ft_atoi(get_nbr(file));
 		read(file, buffer, 1);
