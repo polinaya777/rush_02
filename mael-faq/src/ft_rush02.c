@@ -6,15 +6,18 @@
 /*   By: mael-faq <mael-faq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:09:14 by mael-faq          #+#    #+#             */
-/*   Updated: 2024/09/22 18:33:14 by mael-faq         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:38:36 by pyarova          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
 #include "ft.h"
 
 char	*get_nbr(int file)
 {
-	int	i;
+	int		i;
 	char	buffer[1];
 	char	*str;
 
@@ -24,7 +27,6 @@ char	*get_nbr(int file)
 	read(file, buffer, 1);
 	while (buffer[0] == '\n')
 		read(file, buffer, 1);
-	
 	i = 0;
 	while (buffer[0] >= '0' && buffer[0] <= '9')
 	{
@@ -37,8 +39,9 @@ char	*get_nbr(int file)
 
 char	*get_number_name(int file, char *buffer)
 {
-	int	i;
+	int		i;
 	char	*str;
+
 	str = (char *) malloc(sizeof(char) * 128);
 	if (str == NULL)
 		return (NULL);
@@ -54,11 +57,11 @@ char	*get_number_name(int file, char *buffer)
 
 t_list	*init_list(char *file_name)
 {
-	int	i;
-	int	file;
+	int		i;
+	int		file;
 	char	buffer[1];
 	t_list	*list;
-	char *tmp;
+	char	*tmp;
 
 	file = open(file_name, O_RDONLY);
 	list = (t_list *)malloc(sizeof(t_list) * 42);
@@ -67,7 +70,7 @@ t_list	*init_list(char *file_name)
 	i = 0;
 	while (i < 42)
 	{
-		list[i].nbr = ft_atoi(get_nbr(file));
+		list[i].nbr = ft_atol(get_nbr(file));
 		read(file, buffer, 1);
 		while (buffer[0] == ' ')
 			read(file, buffer, 1);

@@ -6,10 +6,11 @@
 /*   By: mael-faq <mael-faq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:09:12 by mael-faq          #+#    #+#             */
-/*   Updated: 2024/09/22 17:09:13 by mael-faq         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:43:11 by pyarova          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "ft.h"
 
 int	get_tens(int nbr)
@@ -36,7 +37,7 @@ int	get_tens(int nbr)
 		return (0);
 }
 
-int	get_decimal_classes(int nbr)
+long long	get_decimal_classes(long long nbr)
 {
 	if (nbr >= 1000000000)
 		return (1000000000);
@@ -50,10 +51,10 @@ int	get_decimal_classes(int nbr)
 		return (get_tens(nbr));
 }
 
-void	ft_print(int n, t_list *list, int *first)
+void	ft_print(long long n, t_list *list, int *first)
 {
-	int i;
-	int decimal_class;
+	int			i;
+	long long	decimal_class;
 
 	i = 0;
 	decimal_class = get_decimal_classes(n);
@@ -71,19 +72,19 @@ void	ft_print(int n, t_list *list, int *first)
 
 int	main(int ac, char **av)
 {
-	t_list *list;
-	int first;
+	t_list	*list;
+	int		first;
 
 	first = 1;
 	if (ac == 2)
 	{
-		if (ft_atoi(av[1]) < 0)
+		if (ft_atol(av[1]) < 0)
 		{
 			write(1, "Error\n", 6);
 			return (0);
 		}
 		list = init_list("numbers.dict");
-		ft_print(ft_atoi(av[1]), list, &first);
+		ft_print(ft_atol(av[1]), list, &first);
 		ft_putchar('\n');
 	}
 	return (0);

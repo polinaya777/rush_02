@@ -6,10 +6,12 @@
 /*   By: mael-faq <mael-faq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:09:13 by mael-faq          #+#    #+#             */
-/*   Updated: 2024/09/22 18:28:19 by mael-faq         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:13:05 by pyarova          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
 #include "ft.h"
 
 void	ft_putchar(char c)
@@ -39,11 +41,11 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
-int	ft_atoi(char *str)
+long long	ft_atol(char *str)
 {
-	int	sum;
-	int	i;
-	int	sign;
+	long long	sum;
+	int			i;
+	int			sign;
 
 	i = 0;
 	sum = 0;

@@ -6,14 +6,14 @@
 #    By: mael-faq <mael-faq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/22 17:09:10 by mael-faq          #+#    #+#              #
-#    Updated: 2024/09/22 17:09:11 by mael-faq         ###   ########.fr        #
+#    Updated: 2024/09/22 20:31:05 by pyarova          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = rush-02
 
-SRC = src/*.c
+SRC = $(wildcard src/*.c)
 
 OBJS = ${SRC:.c=.o}
 
