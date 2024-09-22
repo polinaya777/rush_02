@@ -6,7 +6,7 @@
 /*   By: jpiscice <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 23:45:37 by jpiscice          #+#    #+#             */
-/*   Updated: 2024/09/22 14:39:34 by jpiscice         ###   ########.fr       */
+/*   Updated: 2024/09/22 16:53:22 by jpiscice         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_entry
 	char	*charkey;
 	int		size;
 	char	*value;
+	t_entry	*next;
+	t_entry	*prev;
 }					t_entry;
 
 typedef struct s_dict
