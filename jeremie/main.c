@@ -20,7 +20,7 @@ int	main(void)
 	t_dict	*list;
 	t_entry	*entry;
 
-	dict = "numbers.dict";
+	dict = "numbers.dict"
 	tmp = "tmp.dict";
 	n_lines = cleanfile(dict, tmp);
 	list = (t_list)malloc(sizeof(t_list));
