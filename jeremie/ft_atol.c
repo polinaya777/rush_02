@@ -6,7 +6,7 @@
 /*   By: jpiscice <jpiscice@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 23:53:06 by jpiscice          #+#    #+#             */
-/*   Updated: 2024/09/21 23:35:01 by jpiscice         ###   ########.fr       */
+/*   Updated: 2024/09/22 14:38:22 by jpiscice         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-long	ft_atol(char *str)
+unsigned long long	ft_atol(char *str)
 {
-	int		isneg;
-	int		i;
-	long	n;
+	int					isneg;
+	int					i;
+	unsigned long long	n;
 
 	isneg = 1;
 	i = 0;
