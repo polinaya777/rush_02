@@ -1,10 +1,10 @@
-int	ft_atoi(char *str)
+long	ft_atol(char *str)
 {
-	int	i;
-	int sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
-    i = 0;
+	i = 0;
 	sign = 1;
 	result = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))

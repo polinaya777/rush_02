@@ -1,10 +1,11 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-typedef struct	s_dict_entry
+typedef struct s_dict_entry
 {
-	char *number;
-	char *word;
+	char	*number;
+	char	*word;
 }	t_dict_entry;
 
 t_dict_entry	*parse_dict(char *dict)
@@ -16,12 +17,10 @@ t_dict_entry	*parse_dict(char *dict)
 	if (fd < 0)
 	{
 		write(2, "Dict Error\n", 11);
-		return NULL;
+		return (NULL);
 	}
-
 	new_dict = NULL;
 	//Convert dict to new struct or ???
-
-    close(fd);
+	close(fd);
 	return (new_dict);
 }

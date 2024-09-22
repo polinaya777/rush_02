@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int	ft_check_entry(int argc, char **argv, char **dict, char **number)
+int	ft_check_input(int argc, char **argv, char **dict, char **number)
 {
 	char	*temp;
 
@@ -10,7 +10,7 @@ int	ft_check_entry(int argc, char **argv, char **dict, char **number)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-    if (argc == 3)
+	if (argc == 3)
 	{
 		*dict = argv[1];
 		*number = argv[2];
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	char	*dict;
 	char	*number;
 
-	if (ft_check_entry(argc, argv, &dict, &number))
+	if (ft_check_input(argc, argv, &dict, &number))
 	{
 		if (!dict)
 		{
@@ -49,4 +49,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
